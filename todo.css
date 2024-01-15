@@ -1,16 +1,101 @@
 :root{
-    --primary:#08D9D6;
+    --primary:#F58840;
     --secondary: #252A34;
-    --tertiary:#FF2E63;
+    --tertiary:#fc5c44;
     --quaternary:#EAEAEA;
 }
 body{
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-}
-.Container{
-    background-color: var(--primary);
+    background-color: var(--secondary);
     width: 100%;
     height: 100vh;
+}
+
+/*--Heading--*/
+
+.to-do{
+    margin: 100px auto 50px;
+    max-width: 540px;
+    background-color: var(--quaternary);
+    border-radius:15px;
+    padding: 20px;
+}
+.to-do h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--tertiary);
+}
+.to-do h2 img{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+/*--Input field--*/
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--tertiary);
+    border-radius: 30px;
+    border: 1.5px solid var(--primary);
+}
+input{
+    flex: 1;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: var(--quaternary);
+    font-size: 16px;
+    padding: 10px 20px;
+}
+input::placeholder{
+    color: var(--quaternary);
+}
+input::content{
+    color: var(--quaternary);
+}
+button{
+    border: 1.5px solid var(--quaternary);
+    outline: none;
+    background: var(--primary);
+    color: var(--secondary);
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 16px;
+    padding: 10px 25px;
+}
+
+/*--Lists--*/
+
+ul li{
+    list-style: none;
+    padding: 10px 20px 10px 25px;
+    font-size: 17px;
+    color: var(--secondary);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    background-image: url(Assets/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    top: 9px;
+    left: -5px;
+}
+ul li.checked{
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    color: var(--tertiary);
+    background-image: url(Assets/checked.png);
 }
